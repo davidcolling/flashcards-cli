@@ -3,26 +3,26 @@ interview problem solving process
 ### Understand the Problem
         repeat problem to interview
         ask questions to test assumptions
-    * You may consider asking them the following questions:
+     You should also ask whether you’ll eventually be optimizing for time, space, or both. Even if you believe you already know how to solve the problem, it’s important to ensure that you’re spending your time implementing the solution that your interviewer cares about.
+    Keep track of how much time you’re spending in the ideation phase to leave yourself enough time to code your solution.
+questions to understand the problem
       - How large is the range of values? What kind of values exists?
       - How large is the size of the input? Are there duplicates within the input?
       - What are some extreme cases of inputs?
       - How is the input stored?
-     You should also ask whether you’ll eventually be optimizing for time, space, or both. Even if you believe you already know how to solve the problem, it’s important to ensure that you’re spending your time implementing the solution that your interviewer cares about.
-    Keep track of how much time you’re spending in the ideation phase to leave yourself enough time to code your solution.
 ### Brute Force Solution
     makes sure at least some code is written
     You might think that if you present an initial suboptimal solution that you’ll never get hired, but this isn’t true. explain to the interviewer why its suboptimal
     ask the interviewer whether they’d like you to implement the brute force solution or come up with a more efficient solution. Only start coding once you and your interviewer have agreed on an approach and they’ve given you the green light to move ahead.
 ### Optimize Your Solution
     ask again whether you optimize for time, space, or both. When optimizing, some of your initial assumptions may change, so it’s important to check with your interviewer
-    You may see the most optimal solution right away or be unsure on how to proceed. If you’re stuck, here are some common approaches to optimizing:
-      - Take a second look at the problem, its constraints, and write down your assumptions and possible simplifications.
-      - Consider similar problems you’ve seen and discuss them with your interviewer.
-      - Solve an example by hand and extrapolate about what algorithm(s) could be used.
-      - Simulate the brute-force solution by hand and identify the inefficiencies that could be optimized with a data structure.
-      - Solve a simple version of the problem first, then build on it.
     Don’t forget to communicate and analyze the time or space complexity of the solution you plan to optimize. Once you and your interviewer agree that you have a good solution, it’s time to code it.
+if you get stuck optimizing
+  - Take a second look at the problem, its constraints, and write down your assumptions and possible simplifications.
+  - Consider similar problems you’ve seen and discuss them with your interviewer.
+  - Solve an example by hand and extrapolate about what algorithm(s) could be used.
+  - Simulate the brute-force solution by hand and identify the inefficiencies that could be optimized with a data structure.
+  - Solve a simple version of the problem first, then build on it.
 ### Code Your Solution
     * As an interviewee, it’s important to ensure that your interviewer understands what you’re doing and why you’re doing it in real-time. If you’re explaining your thought process out loud and you take a wrong turn, your interviewer may offer you a hint to get you back on track.
     * While you’re coding, don’t read your code verbatim; but rather, talk about the section of the code you’re implementing at a higher level. Explain why you wrote it that way and what it’s trying to achieve.
@@ -49,35 +49,34 @@ interview problem solving process
     * In this stage, you’ll also have the opportunity to showcase your knowledge around automated testing. You can chat about how you’d generate different types of inputs, how you would stub parts of the code, the test runners you’d use, and more. These are all great signals to show an interviewer.
 Bubble Sort
     - This simple sorting algorithm iterates over a list, comparing elements in pairs and swapping them until the larger elements "bubble up" to the end of the list, and the smaller elements stay at the "bottom".
-Bubble Sort time conplxity
+Bubble Sort time complexity
     - In the worst case scenario (when the list is in reverse order), this algorithm would have to swap every single item of the array. Therefore, if we have n elements in our list, we would have n iterations per item - thus Bubble Sort's time complexity is O(n^2).
     O(n^2)
 #### Selection Sort
     - This algorithm segments the list into two parts: sorted and unsorted. We continuously remove the smallest element of the unsorted segment of the list and append it to the sorted segment.
-#### Selection Sort time conplxity
+#### Selection Sort time complexity
     - For a list with n elements, the outer loop iterates n times. The inner loop iterate n-1 when i is equal to 1, and then n-2 as i is equal to 2 and so forth. The amount of comparisons are `(n - 1) + (n - 2) + ... + 1`, which gives Selection Sort a time complexity of O(n^2).
 #### Insertion Sort
     - Like Selection Sort, this algorithm segments the list into sorted and unsorted parts. It iterates over the unsorted segment, and inserts the element being viewed into the correct position of the sorted list.
-#### Insertion Sort time conplxity
+#### Insertion Sort time complexity
     - In the worst case scenario, an array would be sorted in reverse order. The outer for loop in Insertion Sort function always iterates n-1 times. In the worst case scenario, the inner for loop would swap once, then swap two and so forth. The amount of swaps would then be `1 + 2 + ... + (n - 3) + (n - 2) + (n - 1)` which gives Insertion Sort a time complexity of O(n^2).
 #### Heap Sort
     - This popular sorting algorithm, like the Insertion and Selection sorts, segments the list into sorted and unsorted parts. It converts the unsorted segment of the list to a Heap data structure, so that we can efficiently determine the largest element.
-#### Heap Sort time conplxity
+#### Heap Sort time complexity
     - Let's first look at the time complexity of the `heapify` function. In the worst case the largest element is never the root element, this causes a recursive call to `heapify`. While recursive calls might seem dauntingly expensive, remember that we're working with a binary tree. Visualize a binary tree with 3 elements, it has a height of 2. Now visualize a binary tree with 7 elements, it has a height of 3. The tree grows logarithmically to n. The `heapify` function traverses that tree in O(log(n)) time.
     - The `heap_sort` function iterates over the array n times. Therefore the overall time complexity of the Heap Sort algorithm is O(nlog(n)).
 #### Merge Sort
     - This divide and conquer algorithm splits a list in half, and keeps splitting the list by 2 until it only has singular elements. Adjacent elements become sorted pairs, then sorted pairs are merged and sorted with other pairs as well. This process continues until we get a sorted list with all the elements of the unsorted input list.
-#### Merge Sort time conplxity
+#### Merge Sort time complexity
     - Let's first look at the `merge` function. It takes two lists, and iterates n times, where n is the size of their combined input.
     - The `merge_sort` function splits its given array in 2, and recursively sorts the sub-arrays. As the input being recursed is half of what was given, like binary trees this makes the time it takes to process grow logarithmically to n. Therefore the overall time complexity of the Merge Sort algorithm is O(nlog(n)).
 #### Quick Sort
     - This divide and conquer algorithm is the most often used sorting algorithm. When configured correctly, it's extremely efficient and does not require the extra space Merge Sort uses. We partition the list around a pivot element, sorting values around the pivot.
-#### Quick Sort time conplxity
+#### Quick Sort time complexity
     - The worst case scenario is when the smallest or largest element is always selected as the pivot. This would create partitions of size n-1, causing recursive calls n-1 times. This leads us to a worst case time complexity of O(n^2).
     - While this is a terrible worst case, Quick Sort is heavily used because it's average time complexity is much quicker. While the `partition` function utilizes nested while loops, it does comparisons on all elements of the array to make its swaps. As such, it has a time complexity of O(n).
     - With a good pivot, the Quick Sort function would partition the array into halves which grows logarithmically with n. Therefore the average time complexity of the Quick Sort algorithm is O(nlog(n)).
-**Time Complexities of All Sorting Algorithms**
-    ![Sorting-Comparisons](assets/Sorting-Comparison.png)
+![Sorting-Comparisons](assets/Sorting-Comparison.png)
 * Depth-First traversal
     We completely traverse one sub-tree before exploring a sibling sub-tree (pre-oder, in-order, post-order). uses stack
     ```
@@ -112,26 +111,22 @@ graph bfs use
     - A unique thing about BFS is that it lends itself quite nicely to determining the **shortest path** between any node in the graph and the “parent” node.
       - In fact, most BFS implementations will keep track of every single node’s “parent” nodes that come before it.
       - This is helpful because we can use the pointers of the path that we take to get to a node from the starting node in order to determine a shortest path in the graph.
-    - The power of using breadth-first search to traverse through a graph is that it can easily tell us the **shortest** way to get from one node to another.
+    But if the graph is wide, we'd need to store all of it, level by level, with references and using memory unnecessarily!
+graph bfs time complexity
     - If we must visit every node once, and check every edge in its adjacency list, the runtime complexity for both a directed and undirected graph is the sum of the vertices and their edges as represented by the graph in its adjacency list representation, or **O(V + E)**.
-    - BFS:
-      - Can be great to find the shortest path possible.
-      - But if the graph is wide, we'd need to store all of it, level by level, with references and using memory unnecessarily!
     
 graph DFS Traversals** use
-    - While BFS will traverse through a graph one level of children at a time, DFS will traverse down a single path, one child node at a time.
-      - BFS is good to find a shortest path.
       - DFS tells us if a path even exists.
     - DFS is like solving a maze:
       - We'll continue to walk through the path of the maze until we reach a dead end.
       - When we do reach a dead end, we backtrack until we find another path we haven't walked yet, and repeat.
       - Eventually, we will be able to determine if we can get out of the maze.
+  - Not helpful in finding shortest paths. We could end up following the longest path from node x to y!
+  - But if the graph is deep enough, it can be great since we don't need to store the entire thing in memory!
+dfs time complexity
     - DFS requires **O(V + E)** runtime:
       - For a directed graph, |E| edges to check.
       - For an undirected graph, 2|E| edges (each edge is visited twice).
-    - DFS:
-      - Not helpful in finding shortest paths. We could end up following the longest path from node x to y!
-      - But if the graph is deep enough, it can be great since we don't need to store the entire thing in memory!
 ### Backtracking
     * Backtracking solves problems by trying a series of actions. If a series fails, we back up and try a different series.
     * A maze is a classic example, but the approach can be used on a wide variety of problems.
@@ -163,6 +158,7 @@ graph DFS Traversals** use
     - A tree is a hierarchical data structure consisting of vertices (nodes) and edges that connect them. Trees are similar to graphs, but the key point that differentiates a tree from the graph is that a cycle cannot exist in a tree.
     - Trees are extensively used in Artificial Intelligence and complex algorithms to provide an efficient storage mechanism for problem-solving.
     - Trees are *recursive data structures* because a tree is usually composed of smaller trees — often referred to as subtrees — inside of it. The child of one node in a tree could very well be the parent of another tree (making it the root node of a subtree). This can be really interesting when it comes to writing algorithms to traverse or search through a tree, since the nesting of trees can sometimes lead us to writing recursive search algorithms.
+balanced tree
       - A tree is considered to be **balanced** if any two sibling subtrees do not differ in height by more than one level.
       - However, if two sibling subtrees differ significantly in height (and have more than one level of depth of difference), the tree is **unbalanced**.
 number of edges in a tree
@@ -182,19 +178,30 @@ A **binary tree** is a non linear data structure where each node can have at mos
 
 **Binary search tree** is a binary tree in which a node have a value greater than all values in its left subtree and smaller than all values in its right subtree.
     - If a Binary search tree is balanced then you can find a value in O(log n) time.
-- An **edge list** is a list/array of all of the |E| edges in a graph. Edge lists are one of the simplest representations of a graph.
+- An **edge list** 
+    is a list/array of all of the |E| edges in a graph. Edge lists are one of the simplest representations of a graph.
+edge list time complexity
   - It would take **O(E)** to find one particular edge.
+edge list space complexity
   - The space of representing an edge list is also going to be **O(E)**!
 
-- An **adjacency matrix** is a matrix that represents exactly which vertices/nodes in a graph have edges between them. The matrix serves as a lookup table, where a value of **1** represents an edge that exists, and **0** represents an edge that does not.
-  - They are easy to follow and represent. Looking up, inserting, and removing an edge can be done in **O(1)** (**constant** time).
+- An **adjacency matrix** 
+    is a matrix that represents exactly which vertices/nodes in a graph have edges between them. The matrix serves as a lookup table, where a value of **1** represents an edge that exists, and **0** represents an edge that does not.
+  - They are easy to follow and represent.
+adjacency matrix Looking up, inserting, and removing an edge time complexity
+    can be done in **O(1)** (**constant** time).
+adjacency matrix space complexity
   - However, they can take up more space than necessary. An adjacency matrix always consumes **O(V^2)** amount of space.
   - If a graph is **dense** and has many edges, this isn't too bad. But if a graph has few edges and is **sparse**, the matrix will be mostly filled with **0**'s, but take up lots of space!
 
-- An **adjacency list** is an array of linked lists that servers the purpose of representing a graph, but also makes it easy to see which other vertices are adjacent to other vertices. Each vertex in a graph can easily reference its neighbors through a **linked list**.
+- An **adjacency list** 
+    is an array of linked lists that servers the purpose of representing a graph, but also makes it easy to see which other vertices are adjacent to other vertices. Each vertex in a graph can easily reference its neighbors through a **linked list**.
+adjacency list time complexity to retrieve a vertex's possible neighbors
   - Retrieving one vertex's possible neighbors takes **O(1)** time, sine we only need the vertex's index to get its list of adjacent neighbors.
+adjacency list time complexity to retrieve a specific edge
   - To find a specific edge **(x, y)**, we need to find vertex **x**'s adjacency list, which takes constant time, and look to see if **y** is in that list.
   - In the worst case, this takes **O(d)** time, where **d** is the degree of vertex **v**.
+adjacency list space complexity 
   - An adjacency list will require **|V|** amount of space for the list itself, as every vertex must be represented in the list.
 
 A graph can be easily presented using the python dictionary data types. We represent the vertices as the keys of the dictionary and the connection between the vertices also called edges as the values in the dictionary. Here are basic operations:
