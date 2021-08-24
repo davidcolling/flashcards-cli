@@ -1,5 +1,5 @@
 interview problem solving process
-    understand the problem aloud, brute force a solution, ask what to optimize, code, test
+    understand the problem aloud, brute force a solution, ask what to optimize (and optimize for it), code, test
 ### Understand the Problem
         repeat problem to interview
         ask questions to test assumptions
@@ -159,19 +159,14 @@ graph DFS Traversals** use
     - Since all of ​the nodes and vertices are visited, the time complexity for DFS on a graph is O(V + E); where V is the number of vertices and E is the number of edges. In case of DFS on a tree, the time complexity is O(V), where V is the number of nodes.
 ### Recursion
     * Used when problems exhibit common sub-structures.
-    * SumUpTo(n): Base case = 1 when n = 1; Recursive/Inductive case = n + SumUpTo(n - 1) when n > 1
 ### Trees
     - A tree is a hierarchical data structure consisting of vertices (nodes) and edges that connect them. Trees are similar to graphs, but the key point that differentiates a tree from the graph is that a cycle cannot exist in a tree.
     - Trees are extensively used in Artificial Intelligence and complex algorithms to provide an efficient storage mechanism for problem-solving.
-    - *If a tree has n nodes, it will always have one less number of edges (n-1).*
     - Trees are *recursive data structures* because a tree is usually composed of smaller trees — often referred to as subtrees — inside of it. The child of one node in a tree could very well be the parent of another tree (making it the root node of a subtree). This can be really interesting when it comes to writing algorithms to traverse or search through a tree, since the nesting of trees can sometimes lead us to writing recursive search algorithms.
-    - For the most part, the two properties that we will be the most concerned with are either the depth of a node or the height of a node.
-      - A simple way to think about the **depth** of a node is by answering the question: how far away is the node from the root of the tree?
-      - The **height** of a node can be simplified by asking the question: how far is this node from its furthest-away leaf?
-    - The reason that depth and height are so important is because they tell us a lot about what a tree looks like, right off the bat. And the thing about trees is that they can all look different. One quick example of this is balanced trees versus unbalanced trees.
       - A tree is considered to be **balanced** if any two sibling subtrees do not differ in height by more than one level.
       - However, if two sibling subtrees differ significantly in height (and have more than one level of depth of difference), the tree is **unbalanced**.
-    
+number of edges in a tree
+    - *If a tree has n nodes, it will always have one less number of edges (n-1).*
 The following are the types of trees:
     * N-ary Tree
     * Balanced Tree
@@ -180,11 +175,9 @@ The following are the types of trees:
     * AVL Tree
     * Red Black Tree
     * 2–3 Tree
-
-Out of the above, Binary Tree and Binary Search Tree are the most commonly used trees.
+    Out of the above, Binary Tree and Binary Search Tree are the most commonly used trees.
 
 A **binary tree** is a non linear data structure where each node can have at most 2 child nodes.
-    - If a node have 0 child nodes then it is called a leaf node. In the above image {2,5,11,4} are the leaf nodes.
     - The worst case complexity for searching a node is O(n).
 
 **Binary search tree** is a binary tree in which a node have a value greater than all values in its left subtree and smaller than all values in its right subtree.
@@ -418,22 +411,29 @@ Parallelism and concurrency are closely related concepts:
 **What is inheritance?**
     - A way to structure our code so multiple classes can share common fields, properties, and methods.
     - Classes can still have class-specific data and operations as well.
-### Understanding the purpose of different HTTP requests
-    - The `GET` method requests a representation of the specified resource. Requests using `GET` should only retrieve data.
-    - The `HEAD` method asks for a response identical to that of a `GET` request, but without the response body.
-    - The `POST` method is used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
-    - The `PUT` method replaces all current representations of the target resource with the request payload.
-    - The `DELETE` method deletes the specified resource.
-    - The `CONNECT` method establishes a tunnel to the server identified by the target resource.
-    - The `OPTIONS` method is used to describe the communication options for the target resource.
-    - The `TRACE` method performs a message loop-back test along the path to the target resource.
-    - The `PATCH` method is used to apply partial modifications to a resource.
+http `GET` method 
+    requests a representation of the specified resource. Requests using `GET` should only retrieve data.
+http `HEAD` method 
+    asks for a response identical to that of a `GET` request, but without the response body.
+http `POST` method 
+    is used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
+http `PUT` method 
+    replaces all current representations of the target resource with the request payload.
+http `DELETE` method 
+    deletes the specified resource.
+http `CONNECT` method 
+    establishes a tunnel to the server identified by the target resource.
+http `OPTIONS` method 
+    is used to describe the communication options for the target resource.
+http `TRACE` method 
+    performs a message loop-back test along the path to the target resource.
+http `PATCH` method 
+    is used to apply partial modifications to a resource.
 ### Understanding the single responsibility principle
     - The Single Responsibility Principle (SRP) states that each software module should have one and only one reason to change.
     - When you write a software module, you want to make sure that when changes are requested, those changes can only originate from a single person, or rather, a single tightly coupled group of people representing a single narrowly defined business function. You want to isolate your modules from the complexities of the organization as a whole, and design your systems such that each module is responsible (responds to) the needs of just that one business function.
     - Another wording for the Single Responsibility Principle is: **Gather together the things that change for the same reasons. Separate those things that change for different reasons.**
     - If you think about this you’ll realize that this is just another way to define cohesion and coupling. We want to increase the cohesion between things that change for the same reasons, and we want to decrease the coupling between those things that change for different reasons.
-    
 ### Understanding the benefits of continuous integration
     - In continuous integration:
       - Work in small batches and build quality in.
@@ -442,7 +442,6 @@ Parallelism and concurrency are closely related concepts:
     - Closely related concepts are **continuous testing** and **continous delivery**:
       - In CT: Testing is an ongoing development process. Engineers run automated unit and acceptance tests against every commit to version control. This gives them fast feedback on their changes.
       - Implementing CD means creating multiple feedback loops to ensure that high-quality software gets delivered to users more frequently and more reliably.
-    
 ### What Are Design Fundamentals?
     - Categorized into 4 parts: Foundational Knowledge, Key Characteristics, Components, and Tech Services.
     - From general to specific concepts.
@@ -465,9 +464,9 @@ Parallelism and concurrency are closely related concepts:
     - It allows for ordered and reliable data delivery between machines over the public internet by creating a **connection**.
     - TCP is usually implemented in the kernel, which exposes **sockets** to applications that they can use to stream data through an open connection.
 
-**HTTP (HyperText Transfer Protocol)**
+**HTTP 
+    (HyperText Transfer Protocol)**
     - HTTTP is built on top of TCP.
-    - Client makes HTTP requests, and serves respond with a response.
 
 **IP Packet**
     - An IP packet is effectively the smallest unit used to describe data being sent over **IP**, aside from bytes.
@@ -481,31 +480,26 @@ Parallelism and concurrency are closely related concepts:
     - Some databases only keep records in memory, and the users of such databases are aware of the fact that those records may be lost forever if the machine or process dies.
     - For the most part though, databases need persistence of those records, and thus cannot use memory. This means that you have to write your data to disk. Anything written to disk will remain through power loss or network partitions, so that's what is used to keep permanent records.
     - Since machines die often in a large-scale system, special disk partitions or volumes are used by the database processes, and those volumes can get recovered even if the machine were to go down permanently.
-**Disk**
-    - Disks are usually refers to either **HDD (hard-disk drive)** or **SSD (solid-state drive)**.
-    - Data written to disk will persist through power failures and general machine crashes.
-    - Disk is also referred to as **non-volatile storage**.
-    - SSD is far faster than HDD but also far more expensive from a financial point of view. Because of that, HDD will typically be used for data that's rarely accessed or updated, but that's stored for a long time, and SSD will be used for data that's frequently accessed and updated.
-**Memory**
-    - Short for **Random Access Memory (RAM)**.
-    - Data stored in memory will be lost when the process that has written that data dies.
 **Persistent Storage**
     - Usually refers to disk, but in general, it is any form of storage that persists if the process in charge of managing it dies.
 **Latency**
     - The time it takes for a certain operation to complete in a system.
     - Most often, this measure is a time duration, like milli-seconds or seconds. Below are common orders of magnitude:
-      - **Reading 1 MB from RAM**: 0.25 ms
-      - **Reading 1 MB from SSD**: 1 ms
-      - **Transfer 1 MB over Network**: 10 ms
-      - **Reading 1 MB from HDD**: 20 ms
-      - **Inter-Continental Round Trip**: 150 ms
+latency Reading 1 MB from RAM**: 
+    0.25 ms
+latency Reading 1 MB from SSD**: 
+    1 ms
+latency Transfer 1 MB over Network**: 
+    10 ms
+latency Reading 1 MB from HDD**: 
+    20 ms
+latency Inter-Continental Round Trip**: 
+    150 ms
 **Throughput**
     - The number of operations that a system can handle properly per time unit.
     - For instance, the throughput of a server can often be measured in requests per second.
-**Process**
-    - A program that is currently running on a machine. You should always assume that any process may get terminated at any time in a sufficiently large system.
-**Server**
-    - A machine or process that provides data or service for a client, usually by listening for incoming network calls.
+Process assumption
+    You should always assume that any process may get terminated at any time in a sufficiently large system.
 **Node/Instance/Host**
     - These three terms refer to the same thing most of the time: a virtual or physical machine on which the developer runs processes.
     - Sometimes the word **server** also refers to this same concept.
