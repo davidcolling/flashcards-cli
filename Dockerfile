@@ -1,4 +1,5 @@
 FROM archlinux
 
 RUN pacman -Syu --noconfirm python3
-WORKDIR /root
+COPY flashcards.py /root
+WORKDIR /cpbox

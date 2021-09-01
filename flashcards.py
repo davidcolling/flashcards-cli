@@ -1,5 +1,5 @@
 import re
-flashcards = open('cards.txt', 'r')
+flashcards = open('../cpbox/cards.txt', 'r')
 lines = flashcards.readlines()
 for line in lines:
     if re.match(r'\s', line):
