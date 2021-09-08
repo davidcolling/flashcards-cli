@@ -11,6 +11,12 @@ for line in lines:
     else:
         if (number_of_cards != 0) :
             this_score = input("Enter points to add: ")
+
+            if (not this_score.isdigit()):
+                while (not this_score.isdigit()):
+                    print("This is not an integer");
+                    this_score = input("Enter points to add: ")
+
             score += int(this_score)
         print(line)
         number_of_cards += 1
